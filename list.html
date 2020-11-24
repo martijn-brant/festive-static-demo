@@ -41,7 +41,7 @@
 
   <script>
     (async function () {
-      let response = await fetch(`api/gifts`);
+      let response = await fetch(`https://ashy-hill-05011fd03.azurestaticapps.net/api/gifts`);
       let message = await response.json();
 
       document.querySelector("#message").innerHTML = message.text
