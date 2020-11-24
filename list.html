@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body  {
+        background: url("depositphotos_54868755-stock-photo-snow-stars-christmas-background-3.jpg") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      main {
+        margin: auto;
+        width: 800px;
+        
+        text-align: center;
+        background-color: #DBE6FA;
+        padding: 0px;
+        padding-bottom: 20px;
+
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      
+      h1 {
+        font-size: 3.5em;
+      }
+      </style>
+    <title>My Santa wish list!</title>
+  </head>
+
+  <body>
+    <main>
+      <img src="calendar.jpg" height="450" width="800" />
+      <h1>Dear Santa,</h1>
+      <p>This year, I would like to have the following presents: <b id="message"></b></b></p>
+    </main>
+  </body>
+
+  <script>
+    (async function () {
+      let response = await fetch(`api/gifts`);
+      let message = await response.json();
+
+      document.querySelector("#message").innerHTML = message.text
+    })();
+  </script>
+</html>
