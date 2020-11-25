@@ -35,16 +35,26 @@
     <main>
       <img src="calendar.jpg" height="450" width="800" />
       <h1>Dear Santa,</h1>
-      <p>This year, I would like to have the following presents: <b id="message"></b></b></p>
+      <p>
+        This year, I would like to have the following presents: <br />
+        <b id="listofgifts"></b>
+      </p>
     </main>
   </body>
 
   <script>
     (async function () {
       let response = await fetch(`https://ashy-hill-05011fd03.azurestaticapps.net/api/gifts`);
-      let message = await response.json();
+      let giftJSON = await response.json();
 
-      document.querySelector("#message").innerHTML = message.text
+      var giftlist = JSON.parse(giftJSON.text);
+
+      for (const gift in obj) {
+        document.querySelector("#listofgifts").innerHTML += `${gift}: ${obj[gift]} <br />`
+        console.log(`${gift}: ${obj[gift]}`);
+      }
+
+      
     })();
   </script>
 </html>
