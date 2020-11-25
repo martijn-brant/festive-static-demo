@@ -49,9 +49,9 @@
 
       var giftlist = JSON.parse(giftJSON.text);
 
-      for (const gift in giftlist) {
-        document.querySelector("#listofgifts").innerHTML += `${gift}: ${giftlist[gift]} <br />`
-        console.log(`${gift}: ${giftlist[gift]}`);
+      for (const gift in giftlist.gifts) {
+        document.querySelector("#listofgifts").innerHTML += `${gift}: ${giftlist.gifts[gift]} <br />`
+        console.log(`${gift}: ${giftlist.gifts[gift]}`);
       }
 
       
