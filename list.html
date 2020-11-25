@@ -70,9 +70,7 @@
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
+
       <p>Thank you Santa!</p>
     </main>
   </body>
@@ -89,7 +87,7 @@
 
       for (const gift in giftlist.gifts) {
         //document.querySelector("#listofgifts").innerHTML += `${gift}: ${giftlist.gifts[gift]} <br />`
-        document.querySelector("#tableofgifts").innerHTML += `<tr><td>${giftlist.gifts[gift].Name}</td><td>${giftlist.gifts[gift].Notes}</td><td class="center">${giftlist.gifts[gift].Store}</td></tr>`
+        document.querySelector("#tableofgifts").innerHTML += `<tr><td>${giftlist.gifts[gift].Name}</td><td>${giftlist.gifts[gift].Notes}</td><td>${giftlist.gifts[gift].Store}</td></tr>`
         console.log(`${gift}: ${giftlist.gifts[gift]}`);
       }
 
